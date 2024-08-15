@@ -1,0 +1,111 @@
+@import './../../sassStyles/variables';
+@import "./../../sassStyles/mixins";
+
+.PageHeader {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 15px;
+}
+
+
+
+.TableStaff{
+    margin: 20px auto 20px auto;
+    width: max-content;
+}
+
+.tableWrapper{
+    @include customMaxBreakPoint(500) {
+        overflow: auto;
+    }
+}
+
+.TablePanel{
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 505px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px 0 10px;
+
+    @include customMaxBreakPoint(420) {
+        width: 300px;
+        display: grid;
+        grid-template-areas:
+        "sort sort"
+        "filter filter"
+        "checkbox create";
+
+        >div:nth-of-type(1){
+            grid-area: sort;
+        }
+
+        >div:nth-of-type(2){
+            grid-area: filter;
+        }
+
+        >button {
+            margin-left: 10px;
+        }
+
+        justify-content: center;
+        align-items: center;
+        justify-items: stretch;
+        align-content: space-between;
+        height: 120px;
+    }
+}
+
+.LoadingInfo{
+    font-size: 20px;
+    text-align: center;
+    height: 300px;
+}
+
+.StaffItem{
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+
+    > td {
+        padding: 5px 20px 5px 20px;
+        width: 100px;
+        &:first-child{
+            width: 180px;
+            border-bottom-left-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+        &:last-child{
+            width: 140px;
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+    }
+
+    &:hover{
+        transition: all 0.3s ease-in-out;
+        background: #0b76ef;
+        color: #f1f1f1;
+    }
+}
+
+.CreateStaff{
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 4px;
+    color: $text-color;
+    background: $background-color-access;
+    font-size: 20px;
+    cursor: pointer;
+}

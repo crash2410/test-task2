@@ -1,0 +1,38 @@
+@import './../../sassStyles/variables';
+
+.Header {
+  padding: 30px 0 10px 0;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.EditStaffForm {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px auto 0 auto;
+
+  > input {
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 8px;
+    padding-left: 10px;
+  }
+
+  input[type="submit"]{
+    cursor: pointer;
+    background-color: $background-color-access;
+    color: $text-color;
+  }
+
+  button{
+    margin-top: 20px;
+    border: none;
+    height: 30px;
+    border-radius: 8px;
+    background-color: $primary-color;
+    color: $text-color;
+    cursor: pointer;
+  }
+}
